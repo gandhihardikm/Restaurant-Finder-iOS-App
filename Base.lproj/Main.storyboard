@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="83e-nb-e4L">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite Controller-->
+        <scene sceneID="be9-tA-Xzx">
+            <objects>
+                <viewController id="JnI-su-kNs" customClass="FavoriteController" customModule="searchdisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iys-wR-qXH"/>
+                        <viewControllerLayoutGuide type="bottom" id="2m6-f2-KN5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Efg-Qj-PYx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mn2-YU-Naj">
+                                <rect key="frame" x="0.0" y="73" width="375" height="545"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="nVd-2t-A1F"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="favRestaurantTableView" destination="mn2-YU-Naj" id="u9J-BT-c4S"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="P2b-of-bFI"/>
+                        <segue destination="H80-wX-TXB" kind="show" identifier="FavoriteToDetailedScreen" id="qMz-9s-YSb"/>
+                        <segue destination="r60-Fd-vin" kind="show" identifier="FavToDetailPage" id="SSq-E5-aNc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Je-lc-G7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="441.5" y="1960.5"/>
+        </scene>
+        <!--Search Restaurant-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="searchdisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MG0-qx-aZy">
+                                <rect key="frame" x="0.0" y="129" width="375" height="489"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="4m9-hA-guy">
+                                <rect key="frame" x="0.0" y="28" width="331" height="44"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="eeF-PX-Lgn"/>
+                    <navigationItem key="navigationItem" title="Search Restaurant" id="BYT-1e-Zh5"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="TableView" destination="MG0-qx-aZy" id="2z6-Tv-hYF"/>
+                        <outlet property="searchBar" destination="4m9-hA-guy" id="cJa-s2-wVb"/>
+                        <segue destination="H80-wX-TXB" kind="show" identifier="SearchScreen" id="ceR-kh-h0R"/>
+                        <segue destination="JnI-su-kNs" kind="show" identifier="SearchToFavoriteScreen" id="oeJ-ed-TXK"/>
+                        <segue destination="r60-Fd-vin" kind="show" identifier="SearchToDetailPage" id="0a0-po-X4e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1375.5" y="1946.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="khm-fJ-czp">
+            <objects>
+                <tabBarController id="83e-nb-e4L" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="H3z-NH-myK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="c8d-k6-Z7W"/>
+                        <segue destination="JnI-su-kNs" kind="relationship" relationship="viewControllers" id="Sxo-c0-zYO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sVn-sp-E5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873.5" y="1028.5"/>
+        </scene>
+        <!--Detailed View Controller-->
+        <scene sceneID="3DH-3z-6C2">
+            <objects>
+                <viewController id="H80-wX-TXB" customClass="DetailedViewController" customModule="searchdisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JAa-Pv-ZE2"/>
+                        <viewControllerLayoutGuide type="bottom" id="XFW-vA-WZP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="09z-GS-P4Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="Ram-3b-hYO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="al1-cU-tUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690.5" y="2950.5"/>
+        </scene>
+        <!--Detailed Screen Page Controller-->
+        <scene sceneID="MRj-47-HA3">
+            <objects>
+                <viewController id="r60-Fd-vin" customClass="DetailedScreenPageController" customModule="searchdisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g2s-JT-fYL"/>
+                        <viewControllerLayoutGuide type="bottom" id="MZm-ug-lP1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nV0-aB-Zrd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t16-89-gHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="1845"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oeJ-ed-TXK"/>
+        <segue reference="P2b-of-bFI"/>
+        <segue reference="0a0-po-X4e"/>
+        <segue reference="ceR-kh-h0R"/>
+    </inferredMetricsTieBreakers>
+</document>
